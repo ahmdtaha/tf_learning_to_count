@@ -15,7 +15,7 @@ The following image demostrates the loss function bug. The following two equatio
   where _d_ in the dimension of the feature _f_..
  
  
-Mehdi _et al._[1] proposed Eq.1. CLVR's repos uses Eq.2, while we use Eq.1. This fix important in order to converge.
+Mehdi _et al._[1] proposed Eq.1. CLVR's repos uses [Eq.2](https://github.com/clvrai/Representation-Learning-by-Learning-to-Count/blob/2e86dfe22fabbbdaab18e858b835697b19f14b50/model.py#L67), while we use Eq.1. This fix is essential in order to converge.
  
  
 
