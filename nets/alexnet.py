@@ -27,12 +27,9 @@ def my_fc(input, output_shape, trainable=True, info=False, batch_norm=True,
     return tf.identity(fc_result_bn, name=name)
 def alexnet_v2(inputs,
                is_train,
-               enable_batch_norm,
                num_classes=1000,
                first_stride=4,
                is_training=True,
-               lrn_enabled=False,
-               drop_enabled=False,
                dropout_keep_prob=0.5,
                spatial_squeeze=True,
                scope='alexnet_v2',
@@ -72,10 +69,7 @@ def alexnet_v2(inputs,
     # Collect outputs for conv2d, fully_connected and max_pool2d.
     with slim.arg_scope([slim.conv2d, slim.fully_connected, slim.max_pool2d],
                         outputs_collections=[end_points_collection]):
-      if enable_batch_norm:
-        batch_norm_fn = slim.batch_norm
-      else:
-        batch_norm_fn = None
+      batch_norm_fn = None
 
       output_layers =[]
 
@@ -84,14 +78,10 @@ def alexnet_v2(inputs,
                         scope='conv1', trainable=is_train, normalizer_fn=batch_norm_fn)
       output_layers.append(net)
       net = slim.max_pool2d(net, [3, 3], 2, scope='pool1',padding='SAME')
-      if lrn_enabled:
-         net = tf.nn.local_response_normalization(net,depth_radius=5, bias=1, alpha=0.0001, beta=0.75)
 
       net = slim.conv2d(net, 256, [5, 5], scope='conv2', trainable=is_train, normalizer_fn=batch_norm_fn,padding='SAME')
       output_layers.append(net)
       net = slim.max_pool2d(net, [3, 3], 2, scope='pool2',padding='SAME')
-      if lrn_enabled:
-         net = tf.nn.local_response_normalization(net,depth_radius=5, bias=1, alpha=0.0001, beta=0.75)
 
 
       net = slim.conv2d(net, 384, [3, 3], scope='conv3', trainable=is_train, normalizer_fn=batch_norm_fn,padding='SAME')
@@ -108,14 +98,10 @@ def alexnet_v2(inputs,
 
           fc6 = my_fc(tf.reshape(net, [tf.shape(inputs)[0], -1]),
                    4096, trainable=is_train,batch_norm=False,  name='fc_6')
-          if drop_enabled:
-            fc6 = slim.dropout(fc6, dropout_keep_prob, is_training=is_training,scope='dropout6')
           output_layers.append(fc6)
 
 
           fc7 = my_fc(fc6, 4096, trainable=is_train,batch_norm=False,  name='fc_7')
-          if drop_enabled:
-            fc7 = slim.dropout(fc7, dropout_keep_prob, is_training=is_training,scope='dropout7')
           output_layers.append(fc7)
 
 
