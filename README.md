@@ -42,8 +42,8 @@ The following table compares our implementation with the paper results.
 
 Contributor list
 ----------------
-1. [Ahmed Taha](http://ahmed-taha.com/)
-2. Alex Hanson
+1. [Ahmed Taha](http://www.cs.umd.edu/~ahmdtaha/)
+2. [Alex Hanson](https://github.com/j-alex-hanson)
 
 * We train the unsupervised representation-count phase for 250 epochs and the supervised linear-classifier phase for 250 epochs. This leads to a long training time. If someone has an to converge faster (e.g., a better learning rate scheduler), please share through a Github issue.  
 * It would be great if someone re-implement this in PyTorch. Let me know and I will add a link to your PyTorch implementation here
