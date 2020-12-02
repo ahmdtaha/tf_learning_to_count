@@ -23,7 +23,7 @@ Our TensorFlow model and loss function are simple. However, to train it *efficie
 
 To run the unsupervised representation-count phase 
 
-`python counter_trn.py --batch_size 256 --exp_name cnt_gpu4_bz256_adam_250 --net alexnet --learning_rate 0.0001 --gpu 0,1,2,3 --logits_dim 1000 --opt adam --epoch 250 --learning_rate_var_name lr_cnt --max_iters 1251`
+`python counter_trn.py --batch_size 256 --exp_name cnt_gpu4_bz256_adam_250 --net alexnet --learning_rate 0.0001 --gpu 0,1,2,3 --logits_dim 1000 --opt adam --epoch 250 --learning_rate_var_name lr_cnt`
 
 To run the supervised linear-classifier phase
 
@@ -51,7 +51,7 @@ Contributor list
 
 ### MISC Notes
 * Our implementation is inspired by [CLVR's implementation](https://github.com/clvrai/Representation-Learning-by-Learning-to-Count). However, the CLVR's implementation has a serious bug and performance issues that need to be fixed. These issues are discussed [here](https://github.com/ahmdtaha/tf_unsupervised_count/blob/main/docs/clvr_bug.md).
-* Our implementation diverges from the paper [1] technical details. We explain why this discrepancy is required [here](https://github.com/ahmdtaha/tf_unsupervised_count/blob/main/docs/paper_discrepancy.md).
+* Our implementation diverges from the paper [1] technical details. We explain this discrepancy [here](https://github.com/ahmdtaha/tf_unsupervised_count/blob/main/docs/paper_discrepancy.md).
 
 ## Release History
 * 1.0.0
