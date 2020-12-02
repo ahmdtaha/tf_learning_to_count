@@ -22,6 +22,7 @@ Our TensorFlow model and loss function are simple. However, to train it *efficie
 ## Usage example
 
 To run the unsupervised representation-count phase 
+
 `python counter_trn.py --batch_size 256 --exp_name cnt_gpu4_bz256_adam_250 --net alexnet --learning_rate 0.0001 --gpu 0,1,2,3 --logits_dim 1000 --opt adam --epoch 250 --learning_rate_var_name lr_cnt --max_iters 1251`
 
 To run the supervised linear-classifier phase
