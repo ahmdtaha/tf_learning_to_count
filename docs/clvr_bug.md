@@ -11,7 +11,7 @@ The following image demostrates the loss function bug. The following two equatio
  Mehdi _et al._[1] employed Eq.1. This equation enforce that the feature should be different between two randomly chosen different images.
  Eq.1 computes the distance (_d \in R^1_) between two different features and make sure _d > M_.
  
- In contrast, Eq.2 d computes the distance **across every dimension** (_d \in R^d_) and make sure _d > M_ **for every dimension**,
+ In contrast, Eq.2 computes the distance **across every dimension** (_d \in R^d_) and make sure _d > M_ **for every dimension**,
   where _d_ in the dimension of the feature _f_..
  
  
