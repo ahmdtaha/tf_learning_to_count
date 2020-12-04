@@ -1,5 +1,5 @@
-# tf_unsupervised_count
-_Unofficial_ Tensorflow implementation of **Representation Learning by Learning to Count** 
+# tf\_unsupervised\_count
+This is an _Unofficial_ Tensorflow implementation of **Representation Learning by Learning to Count (Rep-Cnt).** Rep-Cnt is a self-supervised visual representation approach. Rep-Cnt is published 2017; it no longer achieves SOTA results. However, it is simple approach that serves as a nice tutorial for self-supervised learning approaches. Rep-Cnt is illustrated in this [blog](https://medium.com/p/787ba421611e).
 
 
 
@@ -37,8 +37,11 @@ The following table compares our implementation with the paper results.
 | Ours                          | 18.6  | 30.3  | 33.6  | 30.1  | 24.9  |
     
 ![Our implementation performance](./imgs/cls_performance.jpg)    
-### TODO LIST
 
+### TODO LIST
+* highlight the image resize issue
+* highlight the I/O performance issue
+* Document the discrepancy between the paper and our implementation
 
 Contributor list
 ----------------
@@ -56,6 +59,7 @@ Contributor list
 ## Release History
 * 1.0.0
     * First commit on 25 Nov 2020
+    * First code commit on 2 Dec 2020
 
 
 ## References
