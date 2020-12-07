@@ -1,9 +1,10 @@
-# tf\_unsupervised\_count
-This is an _Unofficial_ Tensorflow implementation of **Representation Learning by Learning to Count (Rep-Cnt).** Rep-Cnt is a self-supervised visual representation approach. Rep-Cnt is published 2017; it no longer achieves SOTA results. However, it is simple approach that serves as a nice tutorial for self-supervised learning approaches. Rep-Cnt is illustrated in this [blog](https://medium.com/p/787ba421611e).
+# Learning To Count
+This is an _Unofficial_ Tensorflow implementation of **Representation Learning by Learning to Count (Lrn-Cnt).** Lrn-Cnt is a self-supervised visual representation approach. Lrn-Cnt is published 2017; it no longer achieves SOTA results. However, it is simple approach that serves as a nice tutorial for self-supervised learning approaches. Lrn-Cnt is illustrated in this [blog](https://medium.com/p/787ba421611e).
 
 
 
 ### TL;DR
+The alexnet used is [here](https://github.com/ahmdtaha/tf_unsupervised_count/blob/main/nets/alexnet.py). This alexnet version is inspired by [Zhang _et al._ [2]](https://github.com/richzhang/colorization/blob/caffe/train_alexnet/train_val_nobn.prototxt). The self-supervised representation count loss is [here](https://github.com/ahmdtaha/tf_unsupervised_count/blob/4f9d4717047f50712e46cad15d9ed09de9351fdb/nets/model.py#L199). The supervised linear classifier loss is [here](https://github.com/ahmdtaha/tf_unsupervised_count/blob/4f9d4717047f50712e46cad15d9ed09de9351fdb/nets/model.py#L120)
 
 ## Requirements
 
@@ -15,9 +16,11 @@ This is an _Unofficial_ Tensorflow implementation of **Representation Learning b
 
 We use cuda 10.0.130 and cudnn v7.6.5
 
-Our TensorFlow model and loss function are simple. However, to train it *efficiently*, we needed to use TensorPack and Nvidia-DALI libraries. If linking these libraries is challenging, feel free to remove them from the code and use Tensorflow only (e.g., tf.data.dataset). The requirements.txt lists all our install packages and their versions.
+Our TensorFlow model and loss function are simple. However, to train it *efficiently*, we needed to use [TensorPack](https://tensorpack.readthedocs.io/) and [Nvidia-DALI](https://docs.nvidia.com/deeplearning/dali/user-guide/docs/) libraries. If linking these libraries is challenging, feel free to remove them from the code and use Tensorflow only (e.g., tf.data.dataset). The requirements.txt lists all our install packages and their versions.
 
-## ImageNet Pretrained Models
+[//]: # "## ImageNet Pretrained Models"
+
+
 
 ## Usage example
 
@@ -64,3 +67,4 @@ Contributor list
 
 ## References
 [1] Representation Learning by Learning to Count
+[2] Colorful image colorization
