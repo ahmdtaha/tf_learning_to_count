@@ -1,4 +1,4 @@
-# Learning To Count
+# Learning to Count
 This is an _Unofficial_ Tensorflow implementation of **Representation Learning by Learning to Count (Lrn-Cnt).** Lrn-Cnt is a self-supervised visual representation approach. Lrn-Cnt is published 2017; it no longer achieves SOTA results. However, it is simple approach that serves as a nice tutorial for self-supervised learning approaches. Lrn-Cnt is illustrated in this [blog](https://medium.com/p/787ba421611e).
 
 
